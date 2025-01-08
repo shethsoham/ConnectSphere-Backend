@@ -1,0 +1,19 @@
+{
+  "name": "connect-sphere-backend",
+  "version": "1.0.0",
+  "description": "Backend for connnect sphere",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "start":"node src/app.js",
+    "dev": "nodemon src/app.js"
+  },
+  "keywords": [
+    "backend"
+  ],
+  "author": "Soham Sheth",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
