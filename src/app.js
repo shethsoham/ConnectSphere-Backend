@@ -2,26 +2,29 @@ const express = require("express");
 
 const app = express();
 
-// This will only handle GET call to /user
-app.get("/user", (req, res) => {
-  res.send({ firstName: "Soham", lastName: "Sheth" });
+app.use("/", (err, req, res, next) => {
+  if (err) {
+    // Log your error
+    res.status(500).send("something went wrong");
+  }
 });
 
-app.post("/user", async (req, res) => {
-  console.log(req.body);
-  // saving data to DB
-  res.send("Data successfully saved to the database!");
-});
+app.get("/getUserData", (req, res) => {
+  //try {
+  // Logic of DB call and get user data
 
-app.delete("/user", (req, res) => {
-  res.send("Deleted successfully!");
+  throw new Error("dvbzhjf");
+  res.send("User Data Sent");
+  //   } catch (err) {
+  //     res.status(500).send("Some Error contact support team");
+  //   }
 });
-
-// this will match all the HTTP method API calls to /test
-app.use("/test", (req, res) => {
-  res.send("Hello from the server!");
+app.use("/", (err, req, res, next) => {
+  if (err) {
+    // Log your error
+    res.status(500).send("something went wrong");
+  }
 });
-
 
 app.listen(7777, () => {
   console.log("Server is successfully listening on port 7777...");
